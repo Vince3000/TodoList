@@ -1,6 +1,6 @@
 //Selection des éléments
 const clear = document.querySelector(".clear");
-const dateElement = document.getElementById("date");
+const dateElement = document.getElementById("date");//Récupère les éléments par l'ID
 const list = document.getElementById("list");
 const input = document.getElementById("input");
 //Noms de class
@@ -32,7 +32,7 @@ function loadList(array){
 //Affichage de la date
 const options={weekday:"long",day:"numeric", month:"long", year:"numeric"}
 const today=new Date();
-dateElement.innerHTML=today.toLocaleDateString("fr-FR", options)
+dateElement.innerHTML=today.toLocaleDateString("fr-FR", options)//ajoute à l'élément ID="date" de l'HTML
 //Fonction ajout à la TODO
 function addToDo(toDo,id,done,trash){
 if(trash){return;}
