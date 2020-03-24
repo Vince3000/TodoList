@@ -30,8 +30,8 @@ function loadList(array){
     });
 }
 //Affichage de la date
-const options={weekday:"long",day:"numeric", month:"long", year:"numeric"}
-const today=new Date();
+const options={weekday:"long",day:"numeric", month:"long", year:"numeric"}//Découpe la date en jour de la semaine, jour,mois,année
+const today=new Date();//retourne la date du jour
 dateElement.innerHTML=today.toLocaleDateString("fr-FR", options)//ajoute à l'élément ID="date" de l'HTML
 //Fonction ajout à la TODO
 function addToDo(toDo,id,done,trash){
@@ -39,7 +39,7 @@ if(trash){return;}
 
     const DONE = done?CHECK:UNCHECK;
     const LINE = done?LINE_THROUGH:"";
-    //Code HTML ajouer à chaque insert
+    //Code HTML ajouer à chaque insert | ${...} appel de la variable du JS dans le code html
     const text=`<li class="item">
                     <i class="fa ${DONE} co" job="complete" id="${id}"></i>
                     <p class="text ${LINE}">${toDo}</p>
@@ -54,7 +54,7 @@ if(trash){return;}
     list.insertAdjacentHTML(position,text);
 };
 //Ajout avec la touche ENTER
-document.addEventListener("keyup",function(event){ 
+document.addEventListener("keyup",function(event){ //Quand il capte un evenement appuie touche
             if(event.keyCode==13){//On tape sur ENTRER
                 const toDo=input.value;
                 input.value="";
